@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Lieferranyo!</title>
+    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.svg">
+    <script src="./assets/js/dishes.js"></script>
+    <script src="./assets/js/templates.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+</head>
+
+<body onload="init()">
+    <header w3-include-html="templates/header.html"></header>
+
+    <main>
+        <section class="order-confirm d-none" id="order-confirm-box">
+            <form>
+                <p>Deine Testbestellung wurde vorgenommen.<br>
+                    Danke für deine Bestellung beim einzigen Lieferdienst, bei dem du schon beim Ordern
+                    weißt:<br>&nbsp;<br>
+                    <strong><i>Bevor das Essen kommt, schlafe ich ein!</i></strong><br>&nbsp;<br>Denn wir liefern nie.
+                    Versprochen.
+                </p>
+                <button>Schließen</button>
+            </form>
+        </section>
+
+        <section class="content">
+            <img src="./assets/img/restaurant.webp" alt="Innenansicht von Big Papas Burger" class="restaurant__preview">
+            <img src="./assets/img/restaurant_logo.webp" alt="" class="restaurant__logo">
+            <div class="restaurant__overview">
+                <h2 class="restaurant__overview__name">Big Papa's Burger</h2>
+                <div id="restaurant-stars" class="restaurant__overview__stars">
+                    <!--see templates.js starRating()-->
+                </div>
+            </div>
+            <nav class="dish-navigation">
+                <a href="#dishes-category-box-id0">Beliebte Gerichte</a>
+                <a href="#dishes-category-box-id1">Burger</a>
+                <a href="#dishes-category-box-id2">Beilagen</a>
+                <a href="#dishes-category-box-id3">Getränke</a>
+            </nav>
+
+            <section id="category-container"></section>
+
+        </section>
+
+        <section w3-include-html="templates/basket.html" class="basket" id="basket"></section>
+        <div class="basket__sidebar"><a href="#" onclick="toggleBasket();event.preventDefault();"><img
+                    src="./assets/icons/basket-sidebar.webp"></a></div>
+
+    </main>
+    <footer w3-include-html="templates/footer.html"></footer>
+</body>
+
+</html>
